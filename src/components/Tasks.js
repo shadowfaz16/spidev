@@ -1,26 +1,30 @@
+import { useState } from 'react'
 
-const tasks = [
+const Tasks = () => {
+  const [tasks, setTasks] = usaState([
     {
         id: 1,
         text: 'go swimming',
         day: 'Feb 1st at 8am',
-        remminder: false,
+        reminder: false,
+        category: 'health'
     },
     {
         id: 2,
         text: 'Blockchain 101 course',
         day: 'Feb 3rd at 8am',
-        remminder: true,
+        reminder: true,
+        category: 'learning'
     },
     {
         id: 3,
         text: 'React course',
         day: 'Feb 2nd at 8am',
-        remminder: false,
+        reminder: false,
+        category: 'learning'
     },
-]
+])
 
-const Tasks = () => {
   return (
   <>
     {tasks.map((task) => (<h3 key={task.id}>{task.text}</h3>))}
